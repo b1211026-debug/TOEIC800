@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<title>字彙測驗 健康與運動</title>
+
+<style>
+body { font-family: Arial; padding: 20px }
+button { margin: 4px }
+.question { margin: 8px 0 }
+.result { font-weight: bold; margin-left: 8px }
+.hidden { display: none }
+</style>
+
+<script>
+function showLevel(level){
+easy.classList.add("hidden")
+mid.classList.add("hidden")
+hard.classList.add("hidden")
+document.getElementById(level).classList.remove("hidden")
+}
+function check(id, correct){
+document.getElementById(id).innerText = correct ? "正確" : "錯誤"
+}
+</script>
+</head>
+
+<body>
+
+<h2>健康與運動字彙測驗</h2>
+
+<button onclick="showLevel('easy')">簡單</button>
+<button onclick="showLevel('mid')">中等</button>
+<button onclick="showLevel('hard')">困難</button>
+
+<hr>
+
+<!-- 簡單 20 -->
+<div id="easy" class="hidden">
+<h3>簡單</h3>
+
+<div class="question">1 exercise 是
+<button onclick="check('e1',false)">休息</button>
+<button onclick="check('e1',true)">運動</button>
+<span id="e1" class="result"></span></div>
+
+<div class="question">2 health 是
+<button onclick="check('e2',true)">健康</button>
+<button onclick="check('e2',false)">醫院</button>
+<span id="e2" class="result"></span></div>
+
+<div class="question">3 gym 是
+<button onclick="check('e3',false)">教室</button>
+<button onclick="check('e3',true)">健身房</button>
+<span id="e3" class="result"></span></div>
+
+<div class="question">4 diet 是
+<button onclick="check('e4',true)">飲食</button>
+<button onclick="check('e4',false)">藥物</button>
+<span id="e4" class="result"></span></div>
+
+<div class="question">5 run 是
+<button onclick="check('e5',false)">游泳</button>
+<button onclick="check('e5',true)">跑步</button>
+<span id="e5" class="result"></span></div>
+
+<div class="question">6 sleep 是
+<button onclick="check('e6',true)">睡眠</button>
+<button onclick="check('e6',false)">運動</button>
+<span id="e6" class="result"></span></div>
+
+<div class="question">7 water 是
+<button onclick="check('e7',false)">飲料</button>
+<button onclick="check('e7',true)">水</button>
+<span id="e7" class="result"></span></div>
+
+<div class="question">8 doctor 是
+<button onclick="check('e8',true)">醫生</button>
+<button onclick="check('e8',false)">病人</button>
+<span id="e8" class="result"></span></div>
+
+<div class="question">9 tired 是
+<button onclick="check('e9',true)">疲累</button>
+<button onclick="check('e9',false)">興奮</button>
+<span id="e9" class="result"></span></div>
+
+<div class="question">10 strong 是
+<button onclick="check('e10',false)">虛弱</button>
+<button onclick="check('e10',true)">強壯</button>
+<span id="e10" class="result"></span></div>
+
+<div class="question">11 rest 是
+<button onclick="check('e11',true)">休息</button>
+<button onclick="check('e11',false)">比賽</button>
+<span id="e11" class="result"></span></div>
+
+<div class="question">12 food 是
+<button onclick="check('e12',false)">藥</button>
+<button onclick="check('e12',true)">食物</button>
+<span id="e12" class="result"></span></div>
+
+<div class="question">13 weight 是
+<button onclick="check('e13',true)">體重</button>
+<button onclick="check('e13',false)">身高</button>
+<span id="e13" class="result"></span></div>
+
+<div class="question">14 hurt 是
+<button onclick="check('e14',false)">痊癒</button>
+<button onclick="check('e14',true)">受傷</button>
+<span id="e14" class="result"></span></div>
+
+<div class="question">15 walk 是
+<button onclick="check('e15',true)">走路</button>
+<button onclick="check('e15',false)">跑步</button>
+<span id="e15" class="result"></span></div>
+
+<div class="question">16 hospital 是
+<button onclick="check('e16',false)">學校</button>
+<button onclick="check('e16',true)">醫院</button>
+<span id="e16" class="result"></span></div>
+
+<div class="question">17 energy 是
+<button onclick="check('e17',true)">精力</button>
+<button onclick="check('e17',false)">壓力</button>
+<span id="e17" class="result"></span></div>
+
+<div class="question">18 team 是
+<button onclick="check('e18',false)">對手</button>
+<button onclick="check('e18',true)">團隊</button>
+<span id="e18" class="result"></span></div>
+
+<div class="question">19 practice 是
+<button onclick="check('e19',true)">練習</button>
+<button onclick="check('e19',false)">休假</button>
+<span id="e19" class="result"></span></div>
+
+<div class="question">20 exercise plan 是
+<button onclick="check('e20',false)">飲食習慣</button>
+<button onclick="check('e20',true)">運動計畫</button>
+<span id="e20" class="result"></span></div>
+</div>
+
+<!-- 中等 20 -->
+<div id="mid" class="hidden">
+<h3>中等</h3>
+
+<div class="question">1 muscle 是
+<button onclick="check('m1',true)">肌肉</button>
+<button onclick="check('m1',false)">骨頭</button>
+<span id="m1" class="result"></span></div>
+
+<div class="question">2 stress 是
+<button onclick="check('m2',false)">力量</button>
+<button onclick="check('m2',true)">壓力</button>
+<span id="m2" class="result"></span></div>
+
+<div class="question">3 routine 是
+<button onclick="check('m3',true)">日常習慣</button>
+<button onclick="check('m3',false)">意外事件</button>
+<span id="m3" class="result"></span></div>
+
+<div class="question">4 injury 是
+<button onclick="check('m4',false)">訓練</button>
+<button onclick="check('m4',true)">受傷</button>
+<span id="m4" class="result"></span></div>
+
+<div class="question">5 active 是
+<button onclick="check('m5',true)">活躍的</button>
+<button onclick="check('m5',false)">懶散的</button>
+<span id="m5" class="result"></span></div>
+
+<div class="question">6 prevent 是
+<button onclick="check('m6',true)">預防</button>
+<button onclick="check('m6',false)">增加</button>
+<span id="m6" class="result"></span></div>
+
+<div class="question">7 recover 是
+<button onclick="check('m7',false)">受傷</button>
+<button onclick="check('m7',true)">恢復</button>
+<span id="m7" class="result"></span></div>
+
+<div class="question">8 habit 是
+<button onclick="check('m8',true)">習慣</button>
+<button onclick="check('m8',false)">目標</button>
+<span id="m8" class="result"></span></div>
+
+<div class="question">9 improve 是
+<button onclick="check('m9',false)">惡化</button>
+<button onclick="check('m9',true)">改善</button>
+<span id="m9" class="result"></span></div>
+
+<div class="question">10 balance 是
+<button onclick="check('m10',true)">平衡</button>
+<button onclick="check('m10',false)">速度</button>
+<span id="m10" class="result"></span></div>
+
+<div class="question">11 training 是
+<button onclick="check('m11',false)">休息</button>
+<button onclick="check('m11',true)">訓練</button>
+<span id="m11" class="result"></span></div>
+
+<div class="question">12 stretch 是
+<button onclick="check('m12',true)">伸展</button>
+<button onclick="check('m12',false)">跳躍</button>
+<span id="m12" class="result"></span></div>
+
+<div class="question">13 warm up 是
+<button onclick="check('m13',true)">暖身</button>
+<button onclick="check('m13',false)">冷卻</button>
+<span id="m13" class="result"></span></div>
+
+<div class="question">14 condition 是
+<button onclick="check('m14',false)">時間</button>
+<button onclick="check('m14',true)">狀況</button>
+<span id="m14" class="result"></span></div>
+
+<div class="question">15 healthy 是
+<button onclick="check('m15',true)">健康的</button>
+<button onclick="check('m15',false)">生病的</button>
+<span id="m15" class="result"></span></div>
+
+<div class="question">16 reduce 是
+<button onclick="check('m16',false)">增加</button>
+<button onclick="check('m16',true)">減少</button>
+<span id="m16" class="result"></span></div>
+
+<div class="question">17 daily 是
+<button onclick="check('m17',true)">每日的</button>
+<button onclick="check('m17',false)">每月的</button>
+<span id="m17" class="result"></span></div>
+
+<div class="question">18 fitness 是
+<button onclick="check('m18',false)">食物種類</button>
+<button onclick="check('m18',true)">體能狀況</button>
+<span id="m18" class="result"></span></div>
+
+<div class="question">19 routine exercise 是
+<button onclick="check('m19',true)">規律運動</button>
+<button onclick="check('m19',false)">激烈比賽</button>
+<span id="m19" class="result"></span></div>
+
+<div class="question">20 physical 是
+<button onclick="check('m20',true)">身體的</button>
+<button onclick="check('m20',false)">心理的</button>
+<span id="m20" class="result"></span></div>
+</div>
+
+<!-- 困難 20 -->
+<div id="hard" class="hidden">
+<h3>困難</h3>
+
+<div class="question">1 endurance 是
+<button onclick="check('h1',false)">速度</button>
+<button onclick="check('h1',true)">耐力</button>
+<span id="h1" class="result"></span></div>
+
+<div class="question">2 nutrition 是
+<button onclick="check('h2',true)">營養</button>
+<button onclick="check('h2',false)">藥品</button>
+<span id="h2" class="result"></span></div>
+
+<div class="question">3 fatigue 是
+<button onclick="check('h3',true)">疲勞</button>
+<button onclick="check('h3',false)">放鬆</button>
+<span id="h3" class="result"></span></div>
+
+<div class="question">4 maintain 是
+<button onclick="check('h4',false)">破壞</button>
+<button onclick="check('h4',true)">維持</button>
+<span id="h4" class="result"></span></div>
+
+<div class="question">5 lifestyle 是
+<button onclick="check('h5',true)">生活方式</button>
+<button onclick="check('h5',false)">工作能力</button>
+<span id="h5" class="result"></span></div>
+
+<div class="question">6 motivation 是
+<button onclick="check('h6',true)">動機</button>
+<button onclick="check('h6',false)">壓力</button>
+<span id="h6" class="result"></span></div>
+
+<div class="question">7 performance 是
+<button onclick="check('h7',false)">外表</button>
+<button onclick="check('h7',true)">表現</button>
+<span id="h7" class="result"></span></div>
+
+<div class="question">8 symptom 是
+<button onclick="check('h8',true)">症狀</button>
+<button onclick="check('h8',false)">治療</button>
+<span id="h8" class="result"></span></div>
+
+<div class="question">9 treatment 是
+<button onclick="check('h9',false)">運動</button>
+<button onclick="check('h9',true)">治療</button>
+<span id="h9" class="result"></span></div>
+
+<div class="question">10 efficient 是
+<button onclick="check('h10',true)">有效率的</button>
+<button onclick="check('h10',false)">緩慢的</button>
+<span id="h10" class="result"></span></div>
+
+<div class="question">11 flexibility 是
+<button onclick="check('h11',true)">柔軟度</button>
+<button onclick="check('h11',false)">力量</button>
+<span id="h11" class="result"></span></div>
+
+<div class="question">12 concentration 是
+<button onclick="check('h12',false)">體力</button>
+<button onclick="check('h12',true)">專注力</button>
+<span id="h12" class="result"></span></div>
+
+<div class="question">13 mental health 是
+<button onclick="check('h13',true)">心理健康</button>
+<button onclick="check('h13',false)">身體訓練</button>
+<span id="h13" class="result"></span></div>
+
+<div class="question">14 physical health 是
+<button onclick="check('h14',false)">工作能力</button>
+<button onclick="check('h14',true)">身體健康</button>
+<span id="h14" class="result"></span></div>
+
+<div class="question">15 medical checkup 是
+<button onclick="check('h15',true)">健康檢查</button>
+<button onclick="check('h15',false)">運動計畫</button>
+<span id="h15" class="result"></span></div>
+
+<div class="question">16 reduce stress 是
+<button onclick="check('h16',false)">增加壓力</button>
+<button onclick="check('h16',true)">減少壓力</button>
+<span id="h16" class="result"></span></div>
+
+<div class="question">17 body condition 是
+<button onclick="check('h17',true)">身體狀況</button>
+<button onclick="check('h17',false)">飲食內容</button>
+<span id="h17" class="result"></span></div>
+
+<div class="question">18 workout schedule 是
+<button onclick="check('h18',false)">工作計畫</button>
+<button onclick="check('h18',true)">運動時程</button>
+<span id="h18" class="result"></span></div>
+
+<div class="question">19 maintain health 是
+<button onclick="check('h19',true)">維持健康</button>
+<button onclick="check('h19',false)">提升速度</button>
+<span id="h19" class="result"></span></div>
+
+<div class="question">20 healthy lifestyle 是
+<button onclick="check('h20',false)">運動比賽</button>
+<button onclick="check('h20',true)">健康生活型態</button>
+<span id="h20" class="result"></span></div>
+</div>
+
+</body>
+</html>

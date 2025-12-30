@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<title>文法測驗 - 現在簡單式</title>
+<style>
+body { font-family: Arial; padding: 20px }
+button { margin: 4px }
+.question { margin: 10px 0 }
+.result { font-weight: bold; margin-left: 8px }
+.hidden { display: none }
+</style>
+</head>
+<body>
+<h2>文法測驗 - 現在簡單式</h2>
+<button onclick="showLevel('easy')">簡單</button>
+<button onclick="showLevel('mid')">中等</button>
+<button onclick="showLevel('hard')">困難</button>
+<hr>
+
+<div id="easy" class="hidden"></div>
+<div id="mid" class="hidden"></div>
+<div id="hard" class="hidden"></div>
+
+<script>
+// 題目資料
+const questions = {
+  easy:[
+    {q:"He ___ to school every day.", correct:"goes", choices:["goes","go","going","gone"]},
+    {q:"She ___ coffee in the morning.", correct:"drinks", choices:["drink","drinks","drank","drinking"]},
+    {q:"They ___ football on Sundays.", correct:"play", choices:["plays","play","playing","played"]},
+    {q:"I ___ English at school.", correct:"study", choices:["study","studies","studied","studying"]},
+    {q:"He ___ TV after dinner.", correct:"watches", choices:["watch","watches","watched","watching"]}
+  ],
+  mid:[
+    {q:"We ___ breakfast at 7 a.m.", correct:"have", choices:["has","have","having","had"]},
+    {q:"She ___ her homework every day.", correct:"does", choices:["does","do","doing","did"]},
+    {q:"They ___ in a big house.", correct:"live", choices:["live","lives","living","lived"]},
+    {q:"I ___ my friends on weekends.", correct:"visit", choices:["visit","visits","visited","visiting"]},
+    {q:"He ___ his teeth twice a day.", correct:"brushes", choices:["brush","brushes","brushed","brushing"]}
+  ],
+  hard:[
+    {q:"Does he ___ to music every day?", correct:"listen", choices:["listen","listens","listened","listening"]},
+    {q:"Where ___ she go after school?", correct:"does", choices:["does","do","did","doing"]},
+    {q:"What time ___ he start work?", correct:"does", choices:["does","do","did","doing"]},
+    {q:"Do they ___ breakfast together?", correct:"have", choices:["have","has","had","having"]},
+    {q:"He ___s English very well.", correct:"speaks", choices:["speaks","speak","spoken","speaking"]}
+  ]
+}
+
+// 隨機打亂陣列
+function shuffle(array){
+  for(let i=array.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [array[i],array[j]]=[array[j],array[i]];
+  }
+  return array;
+}
+
+// 生成題目到指定容器
+function generate(containerId, level){
+  const container=document.getElementById(containerId);
+  container.innerHTML="";
+  questions[level].forEach((item,i)=>{
+    let shuffled=shuffle([...item.choices]);
+    let html=`<div class="question">${i+1} ${item.q}<br>`;
+    shuffled.forEach(choice=>{
+      html+=`<button onclick="checkAnswer('${containerId}_q${i}','${choice}','${item.correct}')">${choice}</button>`;
+    });
+    html+=` <span id="${containerId}_q${i}" class="result"></span></div>`;
+    container.innerHTML+=html;
+  });
+}
+
+// 顯示答案結果
+function checkAnswer(id, selected, correct){
+  document.getElementById(id).innerText = selected===correct?"正確":"錯誤";
+}
+
+// 顯示難度
+function showLevel(level){
+  document.getElementById("easy").classList.add("hidden");
+  document.getElementById("mid").classList.add("hidden");
+  document.getElementById("hard").classList.add("hidden");
+  document.getElementById(level).classList.remove("hidden");
+}
+
+// 初始化
+generate("easy","easy");
+generate("mid","mid");
+generate("hard","hard");
+</script>
+</body>
+</html>
